@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'views/home_view.dart';
 import 'package:provider/provider.dart';
 import 'viewmodels/MovieViewModel.dart';
+import 'views/launch_view.dart';
 
 void main() {
   runApp(
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: const HomeView()
+      home: const  LaunchView()
     );
   }
 }
