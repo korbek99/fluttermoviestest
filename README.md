@@ -41,7 +41,7 @@ Este proyecto utiliza el patrón **Model-View-ViewModel**, el estándar recomend
 Pasos para Pruebas.
 1.  **Clonar repositorio en un directorio  de tu pc macos o windows por medio de terminal o consola de su sistema operativo.
 2.  **desde Terminal o Consola buscar directorio , busque donde clono el proyecto usando un "ls" y luego en consola ejecute "cd fluttermoviestest".
-3.  **Asegure de instalacion de http y provider por medio de Terminal , ejecute estos comandos en su terminal "flutter pub add http" y "flutter pub add provider"
+3.  **Asegure de instalacion de http y provider por medio de Terminal (si aparecen errores extraños), ejecute estos comandos en su terminal "flutter pub add http" y "flutter pub add provider"
 4.  **asegurece de estar en "fluttermoviestest"  por ello ejecute en su terminal "cd fluttermoviestest"
 5.  **ya estando en directorio "fluttermoviestest" ejecute "flutter run"
 6.  **le pedira dispositivo donde desplegar , le recomiendo el browser "Chrome".
