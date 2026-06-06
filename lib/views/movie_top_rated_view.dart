@@ -76,7 +76,7 @@ class _MovieTopRatedState extends State<MovieTopRatedView> {
         final movie = movies[index];
         return ListTile(
             leading: movie.posterPath != null
-              ? Image.network('https://image.tmdb.org/t/p/w500${movie.posterPath}',
+              ? Image.network('${Appstrings.imageBaseString}${movie.posterPath}',
                   width: 150,
                   height: 275,
                   fit: BoxFit.cover)

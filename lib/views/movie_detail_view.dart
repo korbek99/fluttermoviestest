@@ -23,7 +23,7 @@ class MovieDetailView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             if (movie.backdropPath != null)
-              Image.network('https://image.tmdb.org/t/p/w500${movie.backdropPath}'),
+              Image.network('${Appstrings.imageBaseString}${movie.backdropPath}'),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(

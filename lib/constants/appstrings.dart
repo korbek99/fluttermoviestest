@@ -12,6 +12,7 @@ class Appstrings {
   static const String releaseDate = 'Release Date';
   static const String rating = 'Rating';
   static const String infoTitle = 'info';
+  static const String loading = 'Loading...';
 
   static const String infobody = '''Este proyecto utiliza el patrón Model-View-ViewModel, el estándar recomendado para Flutter:
 Model: Estructuras de datos puras que representan la información de las películas (Entities).
@@ -23,5 +24,7 @@ Service: Capa logica para obtencion de datos desde la api desde (https://api.the
 static const String movieDetailsTitle = 'Movie Details';
 static const String popularMovieTitle = 'Popular Movies';
 static const String topRatedMovieTitle = 'Top Rated Movies';
+
+static const String imageBaseString = 'https://image.tmdb.org/t/p/w500';
 
 }
