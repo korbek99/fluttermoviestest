@@ -12,7 +12,12 @@ class InfoView extends StatelessWidget {
         backgroundColor: Colors.yellow,
       ),
       body: const Center(
-        child: Text('Welcome to the Info View!'),
+        child: Text('''Este proyecto utiliza el patrón Model-View-ViewModel, el estándar recomendado para Flutter:
+
+Model: Estructuras de datos puras que representan la información de las películas (Entities).
+View: Vistas declarativas de Flutter que observan cambios en el estado del ViewModel.
+ViewModel: La capa lógica que gestiona las peticiones de red, el procesamiento de datos y expone el estado a la vista.
+Service: Capa logica para obtencion de datos desde la api desde (https://api.themoviedb.org).'''),
       ),
     );
   }
