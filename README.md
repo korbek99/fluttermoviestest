@@ -48,5 +48,5 @@ Pasos para Pruebas.
 
    
 ## 📖 Para Animaciones del la APP
-- **Se reciclo un laucherview de otro proyecto flutter por corto tiempo existente para el test.
+- **Se reciclo un laucherview y loadingview de otro proyecto flutter por corto tiempo existente para el test.
 ---
