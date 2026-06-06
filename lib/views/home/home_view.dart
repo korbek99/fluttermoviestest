@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'movie_popular_view.dart';
-import 'movie_top_rated_view.dart';
-import 'info_view.dart';
-
+import '../../views/movie_top_rated_view.dart';
+import '../../views/info/info_view.dart';
+import '../../views/movie_popular_view.dart';
 
 
 class HomeView extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'home_view.dart';
+import '../home/home_view.dart';
 
 class LaunchView extends StatefulWidget {
   const LaunchView({super.key});
