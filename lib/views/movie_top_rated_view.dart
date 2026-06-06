@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../viewmodels/MovieViewModel.dart';
 import 'movie_detail_view.dart';
+import '../views/loading/loadingView.dart';
 
 class MovieTopRatedView extends StatefulWidget {
   const MovieTopRatedView({super.key});
@@ -91,8 +92,12 @@ class _MovieTopRatedState extends State<MovieTopRatedView> {
           onTap: ()  {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => MovieDetailView(movie: movie),
+              // MaterialPageRoute(
+              //   builder: (context) => MovieDetailView(movie: movie),
+              // ),
+               Loadingview.create(
+                page: MovieDetailView(movie: movie),
+                message: 'Loading details...',
               ),
             );
           },
