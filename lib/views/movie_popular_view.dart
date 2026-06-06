@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../viewmodels/MovieViewModel.dart';
 import 'movie_detail_view.dart';
 import '../views/loading/loadingView.dart';
+import '../../constants/appstrings.dart';
 
 class MoviePopularView extends StatefulWidget {
   const MoviePopularView({super.key});
@@ -28,7 +29,7 @@ class _MoviePopularViewState extends State<MoviePopularView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Popular Movies'),
+        title: const Text(Appstrings.popularMovieTitle),
         backgroundColor: Colors.yellow,
         elevation: 0,
         bottom: PreferredSize(
@@ -42,7 +43,7 @@ class _MoviePopularViewState extends State<MoviePopularView> {
                 });
               },
               decoration: InputDecoration(
-                hintText: 'Search movies...',
+                hintText: Appstrings.searchMovies,
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
@@ -67,7 +68,7 @@ class _MoviePopularViewState extends State<MoviePopularView> {
     }
 
     if(movies.isEmpty) {
-      return const Center(child: Text('No movies found'));
+      return const Center(child: Text(Appstrings.noMoviesFound));
     }
 
 
@@ -99,7 +100,7 @@ class _MoviePopularViewState extends State<MoviePopularView> {
               // ),
               Loadingview.create(
                 page: MovieDetailView(movie: movie),
-                message: 'Loading details...',
+                message: Appstrings.loadingDetails,
               ),
             );
           },

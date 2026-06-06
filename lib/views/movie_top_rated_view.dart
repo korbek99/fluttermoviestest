@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../viewmodels/MovieViewModel.dart';
 import 'movie_detail_view.dart';
 import '../views/loading/loadingView.dart';
+import '../../constants/appstrings.dart';
 
 class MovieTopRatedView extends StatefulWidget {
   const MovieTopRatedView({super.key});
@@ -27,7 +28,7 @@ class _MovieTopRatedState extends State<MovieTopRatedView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Top Rated Movies'),
+        title: const Text(Appstrings.topRatedMovieTitle),
         backgroundColor: Colors.yellow,
         elevation: 0,
         bottom: PreferredSize(
@@ -41,7 +42,7 @@ class _MovieTopRatedState extends State<MovieTopRatedView> {
                 });
               },
               decoration: InputDecoration(
-                hintText: 'Search movies...',
+                hintText: Appstrings.searchMovies,
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
@@ -67,7 +68,7 @@ class _MovieTopRatedState extends State<MovieTopRatedView> {
     }
 
     if(movies.isEmpty) {
-      return const Center(child: Text('No movies found'));
+      return const Center(child: Text(Appstrings.noMoviesFound));
     }
     return ListView.builder(
       itemCount: movies.length,
@@ -97,7 +98,7 @@ class _MovieTopRatedState extends State<MovieTopRatedView> {
               // ),
                Loadingview.create(
                 page: MovieDetailView(movie: movie),
-                message: 'Loading details...',
+                message: Appstrings.loadingDetails,
               ),
             );
           },

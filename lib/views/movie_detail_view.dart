@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/movie_model.dart';
 import 'package:provider/provider.dart';
+import '../../constants/appstrings.dart';
 
 
 class MovieDetailView extends StatelessWidget {
@@ -13,7 +14,7 @@ class MovieDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Movie Details'),
+        title: const Text(Appstrings.movieDetailsTitle),
         backgroundColor: Colors.yellow,
         centerTitle: true,
       ),
@@ -37,9 +38,9 @@ class MovieDetailView extends StatelessWidget {
                   ),
                  
                   const SizedBox(height: 8),
-                  Text('Release Date: ${movie.releaseDate}'),
+                  Text(Appstrings.releaseDate + ': ${movie.releaseDate}'),
                   const SizedBox(height: 8),
-                  Text('Rating: ${movie.voteAverage} (⭐  ${movie.voteCount} votes)'),
+                  Text(Appstrings.rating + ': ${movie.voteAverage} (⭐  ${movie.voteCount} votes)'),
                  // subtitle: Text("Votes ⭐  ${movie.voteAverage}")
                   const SizedBox(height: 16),
                   Text(movie.overview),
