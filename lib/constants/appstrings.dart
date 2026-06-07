@@ -13,6 +13,7 @@ class Appstrings {
   static const String rating = 'Rating';
   static const String infoTitle = 'info';
   static const String loading = 'Loading...';
+  static const String language = 'Language';
 
   static const String infobody = '''Este proyecto utiliza el patrón Model-View-ViewModel, el estándar recomendado para Flutter:
 Model: Estructuras de datos puras que representan la información de las películas (Entities).

@@ -12,6 +12,7 @@ class MovieDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(Appstrings.movieDetailsTitle),
@@ -23,7 +24,12 @@ class MovieDetailView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             if (movie.backdropPath != null)
-              Image.network('${Appstrings.imageBaseString}${movie.backdropPath}'),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.network('${Appstrings.imageBaseString}${movie.backdropPath}',fit: BoxFit.cover,
+              ),
+            ),
+            
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -36,7 +42,7 @@ class MovieDetailView extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                 
+                 Text(Appstrings.language + ': ${movie.originalLanguage.toUpperCase()}'),
                   const SizedBox(height: 8),
                   Text(Appstrings.releaseDate + ': ${movie.releaseDate}'),
                   const SizedBox(height: 8),
