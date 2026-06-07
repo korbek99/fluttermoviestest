@@ -76,34 +76,75 @@ class _MoviePopularViewState extends State<MoviePopularView> {
       itemCount: movies.length,
       itemBuilder: (context, index) {
         final movie = movies[index];
-        return ListTile(
-          leading: movie.posterPath != null
-              ? Image.network('https://image.tmdb.org/t/p/w500${movie.posterPath}',
-                  width: 150,
-                  height: 275,
-                  fit: BoxFit.cover)
-              : const SizedBox(
-               width: 150,
-               height: 275, 
-               child: Icon(Icons.movie)),
-          title: Text(
-            movie.title,
-           style: const TextStyle(fontWeight: FontWeight.bold)
+
+        return Card(
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          elevation: 2,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                Loadingview.create(
+                  page: MovieDetailView(movie: movie),
+                  message: Appstrings.loadingDetails,
+                ),
+              );
+            },
+            child: Row(
+              children: [
+                movie.posterPath != null
+                    ? ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(8),
+                          bottomLeft: Radius.circular(8),
+                        ),
+                        child: Image.network(
+                          '${Appstrings.imageBaseString}${movie.posterPath}',
+                          width: 200,
+                          height: 250,
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    : const SizedBox(
+                        width: 210,
+                        height: 260,
+                        child: Icon(Icons.movie, size: 250),
+                      ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          movie.title,
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          movie.releaseDate != null ? "Release: ${movie.releaseDate!.split('-')[0]}" : "Release date unknown",
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          movie.overview,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+                        ),
+                        const SizedBox(height: 8),
+                        Text("Votes ⭐ ${movie.voteAverage}"),
+                      ],
+                    ),
+                  ),
+                ),
+                const Padding(padding:  EdgeInsets.only(right: 8),
+                child: Icon(Icons.arrow_forward_ios,size: 14,color: Colors.grey,)
+                ),
+              ],
+            ),
           ),
-          subtitle: Text("Votes ⭐  ${movie.voteAverage}"),
-          trailing: const Icon(Icons.arrow_forward_ios,size: 14),
-          onTap: () {
-            Navigator.push(
-              context,
-              // MaterialPageRoute(
-              //   builder: (context) => MovieDetailView(movie: movie),
-              // ),
-              Loadingview.create(
-                page: MovieDetailView(movie: movie),
-                message: Appstrings.loadingDetails,
-              ),
-            );
-          },
         );
       },
     );
