@@ -50,3 +50,9 @@ Pasos para Pruebas.
 ## 📖 Para Animaciones del la APP
 - **Se reciclo un laucherview y loadingview de otro proyecto flutter por corto tiempo existente para el test.
 ---
+
+## 📖 No se realizo en la APP
+- **No se realizo test unitarios por tiempo
+- ** planeaba agregar una collectionview en detailmovieview para dos imagenes con scroll horizontal,No se realizo  por tiempo
+  
+
